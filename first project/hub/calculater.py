@@ -13,32 +13,81 @@ def calcu():
                 print("ok sending you back to Hubby.")
                 break
             if operation == "division" :
-                a = int(input("what is the first number:"))
-                b = int(input("what is the second number:"))
-                if b == 0 :
-                    print("division by 0 error")
-                else:
-                    print(a,"/",b,"=",a/b)
+                while True:
+                    a = int(input("what is the first number:"))
+                    if a == "":
+                        print("oops looks like you are a bit trigerhappy")
+                    else:
+                        while True:
+                            b = int(input("what is the second number:"))
+                            if b == "":
+                                    print("oops looks like you are a bit trigerhappy")
+                            else:
+                                if b == 0 :
+                                    print("division by 0 error")
+                                else:
+                                    print(a,"/",b,"=",a/b)
+                                    break
             if operation == "multiplication" :
-                a = int(input("what is the first number:"))
-                b = int(input("what is the second number:"))
-                print(a,"X",b,"=",a*b)
+                while True:
+                    a = int(input("what is the first number:"))
+                    if a == "":
+                        print("oops looks like you are a bit trigerhappy")
+                    else:
+                        while True:
+                            b = int(input("what is the second number:"))
+                            if b == "":
+                                print("oops looks like you are a bit trigerhappy")
+                            else:
+                                print(a,"X",b,"=",a*b)
             if operation == "subtraction" :
-                a = int(input("what is the first number:"))
-                b = int(input("what is the second number:"))
-                print(a,"-",b,"=",a-b)
+                while True:
+                    a = int(input("what is the first number:"))
+                    if a == "":
+                        print("oops looks like you are a bit trigerhappy")
+                    else:
+                        while True:
+                            b = int(input("what is the second number:"))
+                            if b == "":
+                                print("oops looks like you are a bit trigerhappy")
+                            else:
+                                print(a,"-",b,"=",a-b)
             if operation == "addition" :
-                a = int(input("what is the first number:"))
-                b = int(input("what is the second number:"))
-                print(a,"+",b,"=",a+b)
+                while True:
+                    a = int(input("what is the first number:"))
+                    if a == "":
+                        print("oops looks like you are a bit trigerhappy")
+                    else:
+                        while True:
+                            b = int(input("what is the second number:"))
+                            if b == "":
+                                print("oops looks like you are a bit trigerhappy")
+                            else:
+                                print(a,"+",b,"=",a+b)
             if operation == "modulo" :
-                a = int(input("what is the first number:"))
-                b = int(input("what is the second number:"))
-                print(a,"%",b,"=",a%b)
+                while True:
+                    a = int(input("what is the first number:"))
+                    if a == "":
+                        print("oops looks like you are a bit trigerhappy")
+                    else:
+                        while True:
+                            b = int(input("what is the second number:"))
+                            if b == "":
+                                print("oops looks like you are a bit trigerhappy")
+                            else:
+                                print(a,"%",b,"=",a%b)
             if operation == "factoring" :
-                a = int(input("what is the first number:"))
-                b = int(input("what is the second number:"))
-                print(a,"^",b,"=",a**b)
+                while True:
+                    a = int(input("what is the first number:"))
+                    if a == "":
+                        print("oops looks like you are a bit trigerhappy")
+                    else:
+                        while True:
+                            b = int(input("what is the second number:"))
+                            if b == "":
+                                print("oops looks like you are a bit trigerhappy")
+                            else:
+                                print(a,"^",b,"=",a**b)
             if operation == "stop" :
                 print("sending you to Hubby.")
                 break

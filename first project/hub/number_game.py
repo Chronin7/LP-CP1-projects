@@ -21,23 +21,27 @@ while playAgain:
 
 	num = random.randint (minGuess,maxGuess)
 	print(f'Welcome to GUESS THE NUMBER! i am your host Guessy you have {maxGuessCount} attempts before you lose the game. good luck.')
-	guess = int(input(f'Guess a number {minGuess}-{maxGuess}: '))  
-
-	for x in range(maxGuessCount): 
+	while True:
+		guess = int(input(f'Guess a number {minGuess}-{maxGuess}: '))  
 		if guess == "":
 			print("opps looks like you are a bit trigerhappy")
 		else:
-			if guess < num :
-				guess = int(input ("the number is larger: "))
-				if guess == "":
+			break
+	for x in range(maxGuessCount): 
+		while True:
+				if guess < num :
+					guess = int(input ("the number is larger: "))
+					if guess == "":
+						print("opps looks like you are a bit trigerhappy")
+				elif guess > num :
+					guess = int(input ("the number is smaller: "))
+					break
+				elif guess == "":
 					print("opps looks like you are a bit trigerhappy")
-			if guess > num :
-				guess = int(input ("the number is smaller: "))
-			if guess == "":
-				print("opps looks like you are a bit trigerhappy")
-			else:
-				if guess == num : 
-					print ("you got it")
+				else:
+					if guess == num : 
+						print ("you got it")
+						break
 					playAgain = input ("do you want to play again? (y/n): ")
 					if playAgain != "y":
 						playAgain = False
