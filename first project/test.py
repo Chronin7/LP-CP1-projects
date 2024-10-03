@@ -1,27 +1,21 @@
-def pig(transalte):
-	iteration = 1
-	output = ""
-	test = ""
-	inputs = transalte
-	if len(inputs)<3:
-		return(inputs)
-	for i in inputs:
-		if i == "a":
-			break
-		if i == "e":
-			break
-		if i == "i":
-			break
-		if i == "o":
-			break
-		if i == "u":
-			break
-		if i == "y"and iteration > 1:
-			break
-		iteration =+ 1
-		output = output + i
-	inputs =  inputs[iteration:]
-	output = output + inputs + "ay"
-	return(output)
-
-print(pig(input(":")))
+   
+# Initialize denominator
+k = 1
+ 
+# Initialize sum
+s = 0
+ 
+for i in range(10000000000000000):
+ 
+    # even index elements are positive
+    if i % 2 == 0:
+        s += 4/k
+    else:
+        # odd index elements are negative
+        s -= 4/k
+ 
+    # denominator is odd
+    k += 2
+    print(s)
+     
+print(s)

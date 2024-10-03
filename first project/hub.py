@@ -1,6 +1,5 @@
 import random
 import time
-
 debuging = 0
 invertedP = ""
 iterationP = 1
@@ -66,8 +65,6 @@ def hub():
 			print("sorry this option is not available yet.")
 		else:
 			print("sorry this option is not available yet.")
-
-
 def calculator():
 		operation = 0
 		a = "n/a"
@@ -195,9 +192,6 @@ def calculator():
 
 		else:
 				print("Sorry I didn't understand")
-
-
-
 def game():
 		easterEggCount = 250
 		maxGuessCount = 20
@@ -228,7 +222,6 @@ def game():
 							return
 						else:
 							print("ok")
-
 def palindrome():
 	invertedP = ""
 	doagennP = True
@@ -266,7 +259,6 @@ def palindrome():
 						doagennP = False
 
 						return
-
 if debuging == 0:
 	print("initiating")
 	time.sleep(1.5)

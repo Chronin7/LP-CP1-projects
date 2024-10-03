@@ -1,0 +1,18 @@
+import time
+var = input("input:")
+
+print(f"Traceback (most recent call last):")
+print(f'"  File "/Users/liamperl/Documents/school/LP-CP1-projects/first project/hub/funny.py" line 1, in <module>"')
+print(f"    {var}")
+print(f"NameError: name '{var}' is not defined")
+print("➜  LP-CP1-projects git:(main) ✗ ")
+time.sleep(3)
+print("gotem")
+time.sleep(3)
+print("never")
+print("gunna")
+print("give")
+print("you")
+print("up")
+print("you just got ricroled")
+print("by a computer! hahaha")
