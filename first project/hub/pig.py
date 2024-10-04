@@ -1,6 +1,11 @@
 invertedP = ""
 import time
 import random
+def type_line(str):
+	for c in str:
+		print(c, end = "")
+		time.sleep(random.uniform(.01,.1))
+	print("")
 doagennP = True
 iterationP = 1
 just_started = 0
@@ -18,14 +23,9 @@ while doagennP == True:
 			just_started = 1
 			if runnerP == "n":
 				lists = []
-				for i in "Ok sending you back to Hubby":
-					lists.append(i)
-				for x in lists:
-					print(x, end = "")
-					time.sleep(random.uniform(.01,.1))
-					print("")
-					time.sleep(1)
-					doagennP = False
+				type_line("Ok sending you back to Hubby")
+				time.sleep(1)
+				doagennP = False
 	else:
 			loopP = (len(nameP))
 			lopnarP =(len(nameP))
@@ -40,11 +40,6 @@ while doagennP == True:
 			just_started = 1
 			if runnerP == "n":
 				lists = []
-				for i in "ok sending you back to Hubby":
-					lists.append(i)
-				for x in lists:
-					print(x, end = "")
-					time.sleep(random.uniform(.01,.1))
-				print("")
+				type_line("ok sending you back to Hubby")
 				time.sleep(1)
 				doagennP = False

@@ -1,10 +1,7 @@
 import random
 import time
-def type(text):
-	lists = []
-	for i in text:
-		lists.append(i)
-	for x in lists:
+def type_text(text):
+	for x in text:
 		print(x, end = "")
 		time.sleep(random.uniform(.01,.1))
 	print("")
@@ -13,24 +10,11 @@ while True:
 	output = ""
 	doit = "12345"
 	word = input("hi i am Anny what is the word that you want into anagram or type stop to stop: ")
-	lists.append(i)
 	if word == "stop":
-		lists = []
-		for i in "sending you back to Hubby":
-			lists.append(i)
-		for x in lists:
-			print(x, end = "")
-		time.sleep(random.uniform(.01,.1))
-		print("")
+		type_text("sending you back to Hubby")
 		break
 	if word == "":
-		lists = []
-		for i in "oops looks like you are a bit trigerhappy":
-			lists.append(i)
-		for x in lists:
-			print(x, end = "")
-			time.sleep(random.uniform(.01,.1))
-		print("")
+		type_text("oops looks like you are a bit trigerhappy")
 	else:
 		rand = len(word)
 		for y in doit:
