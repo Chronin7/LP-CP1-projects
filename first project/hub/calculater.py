@@ -1,16 +1,10 @@
-import time
-import random
-operation = 0
-conferm = 0
-a = "n/a"
-b = "n/a"
-def type_text(text):
-	for x in text:
-		print(x, end = "")
-		time.sleep(random.uniform(.01,1.0))
-	print("")
-type_text("Hi this is Calcu. What do you want me to calculate today")
+from config import debugging
+from utils import type_text
 def calcu():
+	operation = 0
+	type_text("Hi this is Calcu. What do you want me to calculate today")
+	a = "n/a"
+	b = "n/a"
 	while True:
 		type_text("0 to stop")
 		type_text("1 for division")
@@ -21,7 +15,7 @@ def calcu():
 		type_text("6 for factoring")
 		operation = input("what do you want: ").lower()
 		if operation == "":
-			type_text("opps looks like you are a bit trigerhappy")
+			type_text("oops looks like you are a bit trigerhappy")
 		else:
 			if operation == "0":
 				type_text("ok sending you back to Hubby.")
@@ -102,4 +96,3 @@ def calcu():
 								type_text("oops looks like you are a bit trigerhappy")
 							else:
 								print(a,"^",b,"=",a**b)
-calcu()

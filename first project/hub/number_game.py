@@ -1,5 +1,7 @@
-def ca():
-	import random
+from config import debugging
+from utils import type_text
+import random
+def game():
 	#just to have a bit of fun
 	easterEggCount = 100
 	#this is the max guess count
@@ -12,8 +14,8 @@ def ca():
 	while playAgain:
 		playCount += 1
 		if playCount == easterEggCount:
-			print("WHY DID YOU WASTE YOUR TIME ON THIS DUMB GAME! DO SOMETHING BETTER WITH YOUR TIME! ##connection terminated by: Guessy## ")
-			exit()
+			type_text("WHY DID YOU WASTE YOUR TIME ON THIS DUMB GAME! DO SOMETHING BETTER WITH YOUR TIME! ##connection terminated by: Guessy## ")
+			quit
 		num = random.randint (minGuess,maxGuess)
 		print(f'Welcome to GUESS THE NUMBER! i am your host Guessy you have {maxGuessCount} attempts before you lose the game. good luck.')
 		while True:
@@ -27,18 +29,18 @@ def ca():
 					if guess < num :
 						guess = int(input ("the number is larger: "))
 						if guess == "":
-							print("oops looks like you are a bit trigerhappy")
+							type_text("oops looks like you are a bit trigerhappy")
 					elif guess > num :
 						guess = int(input ("the number is smaller: "))
 						break
 					elif guess == "":
-						print("oops looks like you are a bit trigerhappy")
+						type_text("oops looks like you are a bit trigerhappy")
 					else:
 						if guess == num : 
-							print ("you got it")
+							type_text("you got it")
 							break
-						playAgain = input ("do you want to play again? (y/n): ")
+						playAgain = input("do you want to play again? (y/n): ")
 						if playAgain != "y":
 							playAgain = False
-							print("ok sending you back to Hubby")
+							type_text("ok sending you back to Hubby")
 						break
