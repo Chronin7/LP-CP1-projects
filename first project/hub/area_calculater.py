@@ -1,6 +1,6 @@
 from utils import type_text
 from config import debugging
-def area():
+def area(shape):
 	type_text("Hi i am Arion. I am a area finder")
 	while True:
 		e = 1

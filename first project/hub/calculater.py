@@ -1,6 +1,6 @@
 from config import debugging
 from utils import type_text
-def calcu():
+def calcu(operation):
 	operation = 0
 	type_text("Hi this is Calcu. What do you want me to calculate today")
 	a = "n/a"

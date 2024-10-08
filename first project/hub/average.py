@@ -1,6 +1,6 @@
 from utils import type_text
 from config import debugging
-def run():
+def run(classes):
 	type_text("I am AV the Avenger.")
 	while True:
 		runs = 1

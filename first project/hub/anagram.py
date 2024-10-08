@@ -1,7 +1,7 @@
 import random
 from utils import type_text
 from config import debugging
-def anagram():
+def anagram(word):
 	type_text("Hi i am Anny")
 	while True:
 		anagram = []

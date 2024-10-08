@@ -38,29 +38,29 @@ def hub():
 		if hubo ==2:
 			type_text("Ok sending you to Calcu.")
 			time.sleep(1)
-			calcu()
+			calcu(1)
 		elif hubo ==3:
 			type_text("Ok sending you to Guessy.")
 			time.sleep(1)
-			game()
+			game(1)
 		elif hubo ==4:
 			type_text("Ok sending you to Pally.")
 			time.sleep(1)
-			pal()
+			pal(1)
 		elif hubo ==5:
 			type_text("Ok sending you to Pig.")
 			time.sleep(1)
-			call()
+			call(1)
 		elif hubo ==6:
 			type_text("Ok sending you to Anny.")
 			time.sleep(1)
-			anagram()
+			anagram(1)
 		elif hubo ==7:
 			type_text("Ok sending you to AV (she is a bit crazy).")
-			run()
+			run(1)
 		elif hubo ==8:
 			type_text("Ok sending you to Kelvin.")
-			farinhight451()
+			farinhight451(1)
 		elif hubo ==9:
 			type_text("Ok sending you to Arion.")
 			area()

@@ -54,7 +54,7 @@ def last_bit():
 	while True:
 		iteration = 1
 		out = ""
-		imput_o_word = input("what do you want to translate or type stop to go back to Hubby:")
+		imput_o_word = input("what do you want to translate or type stop to go back to Hubby: ")
 		if imput_o_word == "stop":
 			type_text("Ok sending you back to hubby. Oink")
 			break
@@ -72,3 +72,4 @@ def last_bit():
 def call():
 	type_text("Hi i am Pig")
 	last_bit()
+call()
