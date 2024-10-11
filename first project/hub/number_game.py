@@ -43,4 +43,3 @@ def game():
 						if playAgain != "y":
 							playAgain = False
 							type_text("ok sending you back to Hubby")
-						break
