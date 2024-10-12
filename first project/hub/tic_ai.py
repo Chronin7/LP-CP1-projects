@@ -1,15 +1,15 @@
 import random
 board = [None] * 9
-def piece_char(c):
+def piece_char(i, c):
 	if c == "X":
-		return "X"
+		return "✗"
 	elif c == "O":
-		return "O"
+		return "○"
 	else:
-		return "*"
+		return "" + str(i+1)
 def print_board(board):
 	for i, place in enumerate(board):	
-		c = piece_char(place)
+		c = piece_char(i, place)
 		if (i + 1) % 3 == 0:
 			print(f" {c} ")
 			if i <=6:
@@ -17,7 +17,6 @@ def print_board(board):
 		else:
 			print(f" {c} |", end="")
 	print()
-
 def possible_boards(cBoard,turn):
 	moves = []
 	for i in range(9):
@@ -93,9 +92,9 @@ def score_move(cBoard, turn):
 			x += bx
 			o += bo
 			t += bt
-	x /= len(possible)
-	o /= len(possible)
-	t /= len(possible)
+	# x /= len(possible)
+	# o /= len(possible)
+	# t /= len(possible)
 	return(x,o,t)
 		
 def check_win(board):
@@ -112,9 +111,9 @@ def check_win(board):
 			return c
 		elif board[2] == c and board[5] == c and board[8] == c:
 			return c
-		elif board[1] == c and board[4] == c and board[7] == c:
+		elif board[0] == c and board[4] == c and board[8] == c:
 			return c
-		elif board[2] == c and board[5] == c and board[8] == c:
+		elif board[2] == c and board[4] == c and board[6] == c:
 			return c
 	for x in board:
 		if x == None:
@@ -127,6 +126,8 @@ def check_move(board, playerMove):
 while True:
 	board = choose_move(board, "X")
 	if check_win(board) != None:
+		print_board(board)
+		print(check_win(board))
 		break
 	while True:
 		print_board(board)
@@ -142,43 +143,50 @@ while True:
 		print("8 for bottom middle")
 		print("9 for bottom right")
 		play_go = int(input("where do you want to go: "))
-		if play_go == 1 and board[0] != None:
-			print("that is alredy taken")
-		elif play_go == 2 and board[1] != None:
-			print("that is alredy taken")
-		elif play_go == 3 and board[2] != None:
-			print("that is alredy taken")
-		elif play_go == 4 and board[3] != None:
-			print("that is alredy taken")
-		elif play_go == 5 and board[4] != None:
-			print("that is alredy taken")
-		elif play_go == 6 and board[5] != None:
-			print("that is alredy taken")
-		elif play_go == 7 and board[6] != None:
-			print("that is alredy taken")
-		elif play_go == 8 and board[7] != None:
-			print("that is alredy taken")
-		elif play_go == 9 and board[8] != None:
-			print("that is alredy taken")
+		if play_go < 10 and play_go > 0:
+			if play_go == 1 and board[0] != None:
+				print("that is alredy taken")
+			elif play_go == 2 and board[1] != None:
+				print("that is alredy taken")
+			elif play_go == 3 and board[2] != None:
+				print("that is alredy taken")
+			elif play_go == 4 and board[3] != None:
+				print("that is alredy taken")
+			elif play_go == 5 and board[4] != None:
+				print("that is alredy taken")
+			elif play_go == 6 and board[5] != None:
+				print("that is alredy taken")
+			elif play_go == 7 and board[6] != None:
+				print("that is alredy taken")
+			elif play_go == 8 and board[7] != None:
+				print("that is alredy taken")
+			elif play_go == 9 and board[8] != None:
+				print("that is alredy taken")
+			else:
+				if play_go == 1:
+					board[0] = "O"
+				if play_go == 2:
+					board[1] = "O"
+				if play_go == 3:
+					board[2] = "O"
+				if play_go == 4:
+					board[3] = "O"
+				if play_go == 5:
+					board[4] = "O"
+				if play_go == 6:
+					board[5] = "O"
+				if play_go == 7:
+					board[6] = "O"
+				if play_go == 8:
+					board[7] = "O"
+				if play_go == 9:
+					board[8] = "O"
+				print_board(board)
+				possible_boards(board, "X")
+				break
 		else:
-			if play_go == 1:
-				board[0] = "O"
-			if play_go == 2:
-				board[1] = "O"
-			if play_go == 3:
-				board[2] = "O"
-			if play_go == 4:
-				board[3] = "O"
-			if play_go == 5:
-				board[4] = "O"
-			if play_go == 6:
-				board[5] = "O"
-			if play_go == 7:
-				board[6] = "O"
-			if play_go == 8:
-				board[7] = "O"
-			if play_go == 9:
-				board[8] = "O"
-			break
+			print("nope")
 	if check_win(board) != None:
+		print(check_win(board))
+		print_board(board)
 		break

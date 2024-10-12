@@ -1,12 +1,37 @@
+# an integer with the comma to separate the thousands
+# a float with 4 decimal places
+# a percentage
+# and then a dollar amount
 
-# I have no clue what your code is doing so i just rewrote it (i bacicly just removed the 0 in the return)
-def sum_even_numbers(numbers):
-	sum = 0
-	for x in str(numbers):
-		if int(x) % 2 == 0:
-			sum += int(x)
-		else:
-			return 
-	return sum
-for x in str(123456789):
-	print(sum_even_numbers(x))
+
+inp = input(":")
+le = len(inp)
+lis = []
+out = []
+it = 0
+itt = -1
+outt = []
+first = inp[1]
+for x in inp:
+	outt.append(x)
+while le-1 != it:
+	it += 1
+	lis.append(inp[it])
+for r in lis:
+	itt += 1
+	if itt % 3 == 0:
+		out.append("""'""")
+		out.append(r)
+	else:
+		out.append(r)
+for x in out:
+	first += x
+print(first)
+outt [:4] = str(".")+str(outt[:4])
+u = ""
+for x in outt:
+	u += x
+print(x)
+print(f"%{inp}")
+print(f"${inp}")
+
