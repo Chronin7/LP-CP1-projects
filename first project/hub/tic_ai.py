@@ -183,6 +183,7 @@ while True:
 					board[8] = "O"
 				print_board(board)
 				possible_boards(board, "X")
+				print(board)
 				break
 		else:
 			print("nope")
