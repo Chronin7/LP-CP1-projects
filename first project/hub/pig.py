@@ -72,4 +72,3 @@ def last_bit():
 def call():
 	type_text("Hi i am Pig")
 	last_bit()
-call()

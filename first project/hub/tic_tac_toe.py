@@ -453,11 +453,11 @@ def check_AI_X():
 		return("null")
 	return
 def print_ui():
-	print(f"{tl}  |  {tm}  |  {tr}",flush=False)
-	print(f"_____________",flush=False)
-	print(f"{ml}  |  {mm}  |  {mr}",flush=False)
-	print(f"_____________",flush=False)
-	print(f"{bl}  |  {bm}  |  {br}",flush=False)
+	print(f"{tl}  |  {tm}  |  {tr}",flush=True)
+	print(f"_____________",flush=True)
+	print(f"{ml}  |  {mm}  |  {mr}",flush=True)
+	print(f"_____________",flush=True)
+	print(f"{bl}  |  {bm}  |  {br}",flush=True)
 while True:
 	tl = " "
 	tm = " "
