@@ -18,8 +18,6 @@ def if_prime():
 			prime_list.append(num)
 			numb += 1
 			print(f"{len(prime_list)}: {num}")
-			if numb == 100000:
-				quit()
 
 
 
