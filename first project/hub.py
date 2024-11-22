@@ -1,5 +1,4 @@
 import random
-#cruintly broken
 import time
 turn = ""
 runhub = True
@@ -21,8 +20,9 @@ typing = False
 type_speed = .01
 player_score = 0
 com_score = 0
+board = [None] * 9
 def display_intro():
-	type_text("Welcome to the Mystic Forest Adventure! i am The DM")
+	type_text("Welcome to the Mystic Forest Adventure! I am The DM")
 	type_text("You find yourself at the edge of a dark, mysterious forest.")
 	type_text("Your goal is to find the hidden treasure and escape safely.")
 def make_choice(options):
@@ -79,6 +79,26 @@ def play_gamre():
 	if treasure_found:
 		type_text("Congratulations! You've won the game!")
 def dwane_the_rock():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	player_score = 0
 	com_score = 0
 	type_text("The Rock wlcomes you to play Rock Paper Scissors")
@@ -96,17 +116,18 @@ def dwane_the_rock():
 			com_prin = "📄"
 		while True:
 			players_move = input("The Rock asks what do you want:")
-			if check_input(players_move,["1","2","3","4"]) == True:
+			players_move = check_int(players_move)
+			if check_int(players_move) != "":
 				break
 			else:
-				type_text("The Rock dos'nt think that that is a valid input")
-		if players_move == "1":
+				type_text("The Rock dosn't think that that is a valid input")
+		if players_move == 1:
 			players_move = "🪨"
-		elif players_move == "2":
+		elif players_move == 2:
 			players_move = "✂️"
-		elif players_move == "3":
+		elif players_move == 3:
 			players_move = "📄"
-		elif players_move == "4":
+		elif players_move ==4:
 			type_text("The Rock will send you back to the hub.")
 			return
 		print(f"The Rock: {com_prin} Player: {players_move}")
@@ -137,11 +158,34 @@ def check_float(input):
 		type_text("not a valid input")
 		return""
 def type_text(textt):
-	for x in textt:
-		print(x, end = "", flush = True)
-		time.sleep(random.uniform(.01,type_speed))
-	print("")
+	if typing == True:
+		for x in textt:
+			print(x, end = "", flush = True)
+			time.sleep(random.uniform(.01,type_speed))
+		print("")
+	else:
+		print(textt,flush=True)
 def anagram():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	type_text("Hi i am Anny")
 	while True:
 		anagramt = []
@@ -164,124 +208,189 @@ def anagram():
 					outputt = outputt + i
 				print (outputt)
 def calculator():
-		operation = 0
-		a = "n/a"
-		b = "n/a"
-		type_text("Hi this is Calcu. What do you want me to calculate today")
-		operation = 0
-		while True:
-			operation = input("Do you want to do division, multiplication, subtraction, addition, modulo, factoring or type stop to stop (I am picky so type the operation the same as shown here.): ").lower()
-			if operation == "division" :
-				while True:
-					a = check_float(input("what is the first number:"))
-					if a != "":
-							break
-				while True:
-					b = check_float(input("what is the second number:"))
-					if b != "":
-						break
-				if b == 0 :
-						type_text("division by 0 error")
-				else:
-						type_text(a,"/",b,"=",a/b)
-			if operation == "multiplication" :
-				while True:
-					a = check_float(input("what is the first number:"))
-					if a != "":
-							break
-				while True:
-					b = check_float(input("what is the second number:"))
-					if b != "":
-						break
-					type_text(a,"X",b,"=",a*b)
-			if operation == "subtraction" :
-				while True:
-					a = check_float(input("what is the first number:"))
-					if a != "":
-							break
-				while True:
-					b = check_float(input("what is the second number:"))
-					if b != "":
-						break
-					type_text(a,"-",b,"=",a-b)
-			if operation == "addition" :
-				while True:
-					a = check_float(input("what is the first number:"))
-					if a != "":
-							break
-				while True:
-					b = check_float(input("what is the second number:"))
-					if b != "":
-						break
-				type_text(a,"+",b,"=",a+b)
-			if operation == "modulo" :
-				while True:
-					a = check_float(input("what is the first number:"))
-					if a != "":
-							break
-				while True:
-					b = check_float(input("what is the second number:"))
-					if b != "":
-						break
-					type_text(a,"%",b,"=",a%b)
-			if operation == "factoring" :
-				while True:
-					a = check_float(input("what is the first number:"))
-					if a != "":
-							break
-				while True:
-					b = check_float(input("what is the second number:"))
-					if b != "":
-						break
-					type_text(a,"^",b,"=",a**b)
-			if operation == "stop" :
-					type_text("ok sending you back to the hub")
-					return
-			if operation == 0 :
-					print("")
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
+	operation = 0
+	a = "n/a"
+	b = "n/a"
+	type_text("Hi this is Calcu. What do you want me to calculate today")
+	operation = 0
+	while True:
+		type_text("0 to stop")
+		type_text("1 for devision")
+		type_text("2 for multiplication")
+		type_text("3 for subtraction")
+		type_text("4 for addition")
+		type_text("5 for modulo")
+		type_text("6 for factoring")
+		operation = input("what do you want: ")
+		if operation == "1" :
+			while True:
+				a = check_float(input("what is the first number:"))
+				if a != "":
+					break
+			while True:
+				b = check_float(input("what is the second number:"))
+				if b != "" and b != 0:
+					break
+			if b == 0 :
+				type_text("division by 0 error")
 			else:
-				type_text("Sorry I didn't understand")
+				print(a,"/",b,"=",a/b)
+		elif operation == "2" :
+			while True:
+				a = check_float(input("what is the first number:"))
+				if a != "":
+					break
+			while True:
+				b = check_float(input("what is the second number:"))
+				if b != "":
+					break
+			print(a,"X",b,"=",a*b)
+		elif operation == "3" :
+			while True:
+				a = check_float(input("what is the first number:"))
+				if a != "":
+					break
+			while True:
+				b = check_float(input("what is the second number:"))
+				if b != "":
+					break
+			print(a,"-",b,"=",a-b)
+		elif operation == "4" :
+			while True:
+				a = check_float(input("what is the first number:"))
+				if a != "":
+					break
+			while True:
+				b = check_float(input("what is the second number:"))
+				if b != "":
+					break
+			print(a,"+",b,"=",a+b)
+		elif operation == "5" :
+			while True:
+				a = check_float(input("what is the first number:"))
+				if a != "":
+					break
+			while True:
+				b = check_float(input("what is the second number:"))
+				if b != "":
+					break
+			print(a,"%",b,"=",a%b)
+		elif operation == "6" :
+			while True:
+				a = check_float(input("what is the first number:"))
+				if a != "":
+					break
+			while True:
+				b = check_float(input("what is the second number:"))
+				if b != "":
+					break
+			print(a,"^",b,"=",a**b)
+		elif operation == "0" :
+				type_text("ok sending you back to the hub")
+				return
+		else:
+			type_text("Sorry I didn't understand")
 def game():
-		easterEggCount = 250
-		maxGuessCount = 20
-		minGuess = 1
-		maxGuess = 100
-		playCount = 0
-		playAgain = True
-		while playAgain == True:
-				if playCount == easterEggCount:
-						type_text("WHY DID YOU WASTE YOUR TIME ON THIS DUMB GAME! DO SOMETHING BETTER WITH YOUR TIME! ##connection terminated by: Guessy##")
-						quit()
-				playCount += 1
-				num = random.randint (minGuess,maxGuess)
-				type_text(f'Welcome the GUESS THE NUMBER! I am your host Guessy. You have {maxGuessCount} attempts before you lose the game. good luck.')
-				while True:
-					guess = input(f'Guess a number {minGuess}-{maxGuess}: ')
-					if check_int(guess):
-						guess = int(guess)
-						break
-				for x in range(maxGuessCount): 
-					if guess < num:
-						while True:
-							guess = check_int(input("the number is larger: "))
-							if guess != "":
-								break
-					if guess > num:
-						while True:
-							guess = check_int(input("the number is smaller: "))
-							if guess != "":
-								break
-					if guess == num: 
-						print ("you got it")
-						playgain = str(input("do you want to play again? (y/n): "))
-						if playgain != "y":
-							playAgain = False
-							type_text("ok sending you back to the hub")
-							time.sleep(1)
-							return
-						else:
-							type_text("ok")
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
+	easterEggCount = 250
+	maxGuessCount = 20
+	minGuess = 1
+	maxGuess = 100
+	playCount = 0
+	playAgain = True
+	while playAgain == True:
+			if playCount == easterEggCount:
+					type_text("WHY DID YOU WASTE YOUR TIME ON THIS DUMB GAME! DO SOMETHING BETTER WITH YOUR TIME! ##connection terminated by: Guessy##")
+					quit()
+			playCount += 1
+			num = random.randint (minGuess,maxGuess)
+			type_text(f'Welcome the GUESS THE NUMBER! I am your host Guessy. You have {maxGuessCount} attempts before you lose the game. good luck.')
+			while True:
+				guess = input(f'Guess a number {minGuess}-{maxGuess}: ')
+				if check_int(guess):
+					guess = int(guess)
+					break
+			for x in range(maxGuessCount): 
+				if guess < num:
+					while True:
+						guess = check_int(input("the number is larger: "))
+						if guess != "":
+							break
+				if guess > num:
+					while True:
+						guess = check_int(input("the number is smaller: "))
+						if guess != "":
+							break
+				if guess == num: 
+					print ("you got it")
+					playgain = str(input("do you want to play again? (y/n): "))
+					if playgain != "y":
+						playAgain = False
+						type_text("ok sending you back to the hub")
+						time.sleep(1)
+						return
+					else:
+						type_text("ok")
 def palindrome():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	invertedP = ""
 	doagennP = True
 	iterationP = 1
@@ -306,9 +415,9 @@ def palindrome():
 						invertedP += nameP[loopP-iterationP]
 						iterationP += 1
 				if invertedP == nameP:
-						type_text(nameP,"is a palindrome")
+						print(nameP,"is a palindrome")
 				else:
-						type_text(nameP,"is not a palindrome")
+						print(nameP,"is not a palindrome")
 				runnerP = str(input("do you want me to detect another palindrome for you? (y/n): ")).lower()
 				if runnerP == "n":
 						type_text("ok sending you back to the hub")
@@ -316,6 +425,26 @@ def palindrome():
 						doagennP = False
 						return
 def area():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	while True:
 		e = 1
 		type_text("1 for rectangle")
@@ -440,28 +569,69 @@ def area():
 			type_text("sorry i didn't understand")
 			e = 1
 def avrage():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	while True:
 		runsq = 1
 		list_o_numsq = []
 		percentageq = 0
-		
-		classesq = input("I am AV the Avenger. How many things do you want to average or type stop to stop: ")
-		if classesq == "stop":
-			type_text("ok sending you back to Hubby")
-			break
-		if classesq != "":
-			classesq = int(classesq)
-			for x in range(classesq):
+		while True:
+			classesq = input("I am AV the Avenger. How many things do you want to average or type stop to stop: ")
+			if classesq == "stop":
+				type_text("ok sending you back to Hubby")
+				return
+			if classesq != "":
+				classesq = check_int(classesq)
+				if classesq != "":
+					break
+		for x in range(classesq):
+			while True:
 				one_at_a_timeq = check_int(input(f"what is the percentage of # {runsq} (only numbers please): "))
-				percentageq += one_at_a_timeq
-				list_o_numsq.append(one_at_a_timeq)
-				runsq += 1
-			type_text(f"you entered {list_o_numsq} #'s it is an average of {percentageq/classesq}")
-		go_aginq = input("do you want to use again (y/n): ")
-		if go_aginq == "n":
-			type_text("ok sending you back to Hubby")
-			break
+				if one_at_a_timeq != "":
+					break
+			percentageq += one_at_a_timeq
+			list_o_numsq.append(one_at_a_timeq)
+			runsq += 1
+		type_text(f"you entered {list_o_numsq} they have an average of {percentageq/classesq}")
 def code():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	input_o_code = input("shhhh. this is a secret i am liam what is the code(only numbers please): ")
 	break_it = 1
 	binary = ""
@@ -502,16 +672,42 @@ def code():
 				break_it = 0
 				break
 	if break_it == 1:
-		print(""""File "/workspaces/codespaces-jupyter/test.py," line 482" """,flush=True)
-		print(f"pickle.({input_o_code})",flush=True)
-		print("		^",flush=True)
-		print("SyntaxError: invalid syntax",flush=True)
-		time.sleep(50)
-		print("lol")
+		print(f"""Traceback (most recent call last):
+  File "c:{chr(92)}Users{chr(92)}liam.perl{chr(92)}Documents{chr(92)}Chronin7{chr(92)}first project{chr(92)}hub.py", line 1315, in <module>
+    hub()
+  File "c:{chr(92)}Users{chr(92)}liam.perl{chr(92)}Documents{chr(92)}Chronin7{chr(92)}first project{chr(92)}hub.py", line 1299, in hub
+    code()
+  File "c:{chr(92)}Users{chr(92)}liam.perl{chr(92)}Documents{chr(92)}Chronin7{chr(92)}first project{chr(92)}hub.py", line 506, in code
+    isinstance(input_o_code)
+TypeError: isinstance expected 2 arguments, got 1""")
+		print(f"PS C:{chr(92)}Users{chr(92)}liam.perl{chr(92)}Documents{chr(92)}Chronin7>",end="")
+		time.sleep(10)
+		print()
+		print("gotem")
 		quit()
 	else:
 		print ("ok sending you back to hubby")
 def translate_word(input_word):
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	split = {}
 	deleted = ""
 	not_a_string = ""
@@ -567,6 +763,7 @@ def last_bit():
 		imput_o_word = input("what do you want to translate or type stop to go back to Hubby: ")
 		if imput_o_word == "stop":
 			type_text("Ok sending you back to hubby. Oink")
+			time.sleep(1)
 			break
 		output = []
 		intt = imput_o_word.split(" ")
@@ -583,29 +780,76 @@ def pig():
 	type_text("Hi i am Pig")
 	last_bit()
 def change_settings():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	while True:
 		type_text("ok")
 		type_text("0 to go back to the terminal")
-		type_text(f"1 to toggle typing: {typing}")
-		type_text(f"2 to toggle debugging: {debugging}")
-		type_text(f"3 to change typing speed: {type_speed}")
+		type_text("1 to toggle typing")
+		type_text("2 to toggle debugging")
+		type_text("3 to change typing speed")
 		while True:
 			imper = check_int(input("what do you want"))
 			if imper != "":
+				
 				break
 		if imper == 0:
 			type_text("ok back to the terminal")
 			break
 		elif imper == 1:
-			typing = not typing
+			if typing == True:
+				typing = False
+			else:
+				typing = True
 		elif imper == 2:
-			debugging = not debugging
+			if debuging == True:
+				debuging = False
+			else:
+				debuging = True
 		elif imper == 3:
 			while True:
 				sett = check_float(input("what do you want to change the typing speed to: "))
 				if sett != "":
 					break
 def farinhight451():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	type_text("hi this is Kelvin")
 	while True:
 		yes = input("would you like celsius to fahrenheit (y/n): ")
@@ -628,20 +872,20 @@ def farinhight451():
 				break
 			else:
 				type_text("sorry i didn't understand")
-def print_ui(board):
+def print_board(board):
 	iteration = -1
 	for x in board:
 		iteration += 1
 		if iteration == 0:
 			if x == "O":
-				q11 = "      ███████████      "
-				q12 = "    ███         ███    "
-				q13 = "   ███           ███   "
-				q14 = "   ███           ███   "
-				q15 = "   ███           ███   "
-				q16 = "   ███           ███   "
-				q17 = "    ███         ███    "
-				q18 = "      ███████████      "
+				q11 = "      ███████████     "
+				q12 = "    ███         ███   "
+				q13 = "   ███           ███  "
+				q14 = "   ███           ███  "
+				q15 = "   ███           ███  "
+				q16 = "   ███           ███  "
+				q17 = "    ███         ███   "
+				q18 = "      ███████████     "
 			elif x == "X":
 				q11 = "   ███         ███    "
 				q12 = "     ███     ███      "
@@ -662,14 +906,14 @@ def print_ui(board):
 				q18 = "                      "
 		elif iteration == 1:
 			if x == "O":
-				q22 = "      ███████████      "
-				q22 = "    ███         ███    "
-				q23 = "   ███           ███   "
-				q24 = "   ███           ███   "
-				q25 = "   ███           ███   "
-				q26 = "   ███           ███   "
-				q27 = "    ███         ███    "
-				q28 = "      ███████████      "
+				q21 = "      ███████████     "
+				q22 = "    ███         ███   "
+				q23 = "   ███           ███  "
+				q24 = "   ███           ███  "
+				q25 = "   ███           ███  "
+				q26 = "   ███           ███  "
+				q27 = "    ███         ███   "
+				q28 = "      ███████████     "
 			elif x == "X":
 				q21 = "   ███         ███    "
 				q22 = "     ███     ███      "
@@ -690,14 +934,14 @@ def print_ui(board):
 				q28 = "                      "
 		elif iteration == 2:
 			if x == "O":
-				q31 = "      ███████████      "
-				q32 = "    ███         ███    "
-				q33 = "   ███           ███   "
-				q34 = "   ███           ███   "
-				q35 = "   ███           ███   "
-				q36 = "   ███           ███   "
-				q37 = "    ███         ███    "
-				q38 = "      ███████████      "
+				q31 = "      ███████████     "
+				q32 = "    ███         ███   "
+				q33 = "   ███           ███  "
+				q34 = "   ███           ███  "
+				q35 = "   ███           ███  "
+				q36 = "   ███           ███  "
+				q37 = "    ███         ███   "
+				q38 = "      ███████████     "
 			elif x == "X":
 				q31 = "   ███         ███    "
 				q32 = "     ███     ███      "
@@ -718,14 +962,14 @@ def print_ui(board):
 				q38 = "                      "
 		elif iteration == 3:
 			if x == "O":
-				q41 = "      ███████████      "
-				q42 = "    ███         ███    "
-				q43 = "   ███           ███   "
-				q44 = "   ███           ███   "
-				q45 = "   ███           ███   "
-				q46 = "   ███           ███   "
-				q47 = "    ███         ███    "
-				q48 = "      ███████████      "
+				q41 = "      ███████████     "
+				q42 = "    ███         ███   "
+				q43 = "   ███           ███  "
+				q44 = "   ███           ███  "
+				q45 = "   ███           ███  "
+				q46 = "   ███           ███  "
+				q47 = "    ███         ███   "
+				q48 = "      ███████████     "
 			elif x == "X":
 				q41 = "   ███         ███    "
 				q42 = "     ███     ███      "
@@ -746,14 +990,14 @@ def print_ui(board):
 				q48 = "                      "
 		elif iteration == 4:
 			if x == "O":
-				q51 = "      ███████████      "
-				q52 = "    ███         ███    "
-				q53 = "   ███           ███   "
-				q54 = "   ███           ███   "
-				q55 = "   ███           ███   "
-				q56 = "   ███           ███   "
-				q57 = "    ███         ███    "
-				q58 = "      ███████████      "
+				q51 = "      ███████████     "
+				q52 = "    ███         ███   "
+				q53 = "   ███           ███  "
+				q54 = "   ███           ███  "
+				q55 = "   ███           ███  "
+				q56 = "   ███           ███  "
+				q57 = "    ███         ███   "
+				q58 = "      ███████████     "
 			elif x == "X":
 				q51 = "   ███         ███    "
 				q52 = "     ███     ███      "
@@ -774,14 +1018,14 @@ def print_ui(board):
 				q58 = "                      "
 		elif iteration == 5:
 			if x == "O":
-				q61 = "      ███████████      "
-				q62 = "    ███         ███    "
-				q63 = "   ███           ███   "
-				q64 = "   ███           ███   "
-				q65 = "   ███           ███   "
-				q66 = "   ███           ███   "
-				q67 = "    ███         ███    "
-				q68 = "      ███████████      "
+				q61 = "      ███████████     "
+				q62 = "    ███         ███   "
+				q63 = "   ███           ███  "
+				q64 = "   ███           ███  "
+				q65 = "   ███           ███  "
+				q66 = "   ███           ███  "
+				q67 = "    ███         ███   "
+				q68 = "      ███████████     "
 			elif x == "X":
 				q61 = "   ███         ███    "
 				q62 = "     ███     ███      "
@@ -802,14 +1046,14 @@ def print_ui(board):
 				q68 = "                      "
 		elif iteration == 6:
 			if x == "O":
-				q71 = "      ███████████      "
-				q72 = "    ███         ███    "
-				q73 = "   ███           ███   "
-				q74 = "   ███           ███   "
-				q75 = "   ███           ███   "
-				q76 = "   ███           ███   "
-				q77 = "    ███         ███    "
-				q78 = "      ███████████      "
+				q71 = "      ███████████     "
+				q72 = "    ███         ███   "
+				q73 = "   ███           ███  "
+				q74 = "   ███           ███  "
+				q75 = "   ███           ███  "
+				q76 = "   ███           ███  "
+				q77 = "    ███         ███   "
+				q78 = "      ███████████     "
 			elif x == "X":
 				q71 = "   ███         ███    "
 				q72 = "     ███     ███      "
@@ -830,14 +1074,14 @@ def print_ui(board):
 				q78 = "                      "
 		elif iteration == 7:
 			if x == "O":
-				q81 = "      ███████████      "
-				q82 = "    ███         ███    "
-				q83 = "   ███           ███   "
-				q84 = "   ███           ███   "
-				q85 = "   ███           ███   "
-				q86 = "   ███           ███   "
-				q87 = "    ███         ███    "
-				q88 = "      ███████████      "
+				q81 = "      ███████████     "
+				q82 = "    ███         ███   "
+				q83 = "   ███           ███  "
+				q84 = "   ███           ███  "
+				q85 = "   ███           ███  "
+				q86 = "   ███           ███  "
+				q87 = "    ███         ███   "
+				q88 = "      ███████████     "
 			elif x == "X":
 				q81 = "   ███         ███    "
 				q82 = "     ███     ███      "
@@ -858,14 +1102,14 @@ def print_ui(board):
 				q88 = "                      "
 		elif iteration == 8:
 			if x == "O":
-				q91 = "      ███████████      "
-				q92 = "    ███         ███    "
-				q93 = "   ███           ███   "
-				q94 = "   ███           ███   "
-				q95 = "   ███           ███   "
-				q96 = "   ███           ███   "
-				q97 = "    ███         ███    "
-				q98 = "      ███████████      "
+				q91 = "      ███████████     "
+				q92 = "    ███         ███   "
+				q93 = "   ███           ███  "
+				q94 = "   ███           ███  "
+				q95 = "   ███           ███  "
+				q96 = "   ███           ███  "
+				q97 = "    ███         ███   "
+				q98 = "      ███████████     "
 			elif x == "X":
 				q91 = "   ███         ███    "
 				q92 = "     ███     ███      "
@@ -918,7 +1162,24 @@ def print_ui(board):
 	{q78}   ██   {q88}   ██   {q98}
                                  ██		               ██
 """
-	print(q1, flush=True)
+	print(q1)
+def piece_char(i, c):
+	if c == "X":
+		return "✗"
+	elif c == "O":
+		return "○"
+	else:
+		return "" + str(i+1)
+def prit_board(board):
+	for i, place in enumerate(board):	
+		c = piece_char(i, place)
+		if (i + 1) % 3 == 0:
+			print(f" {c} ")
+			if i <=6:
+				print("-----------")
+		else:
+			print(f" {c} |", end="")
+	print()
 def possible_boards(cBoard,turn):
 	moves = []
 	for i in range(9):
@@ -1018,138 +1279,150 @@ def check_win(board):
 		if x == None:
 			return None
 	return "tie"
-def meet_o_code(unused):
-	type_text("hi i am The Gamer this is Tic Tac Toe")
+def check_move(board, playerMove):
+	playerMove -= 1
+	return board[playerMove] == None
+def meet_o_code():
+	global board
+	for x in range(9):
+		board[x]=None
 	while True:
-		play = str(input("1 to play computer 2 to play other player and 3 to stop: "))
-		if play == "2":
-			p1 = input("who is player 1: ")
-			p2 = input("who is player 2: ")
+		board = choose_move(board, "X")
+		if check_win(board) != None:
+			print_board(board)
+			if check_win(board) == "X":
+				print("""
+███         ███        ███                        ███   ██████████████████   ███            ███      █████████
+  ███     ███          ███                        ███           ███          ██████         ███    ███
+    ███ ███             ███                      ███            ███          ███   ███      ███    ███
+     █████               ███                    ███             ███          ███      ███   ███      █████████
+     █████                ███      ██████      ███              ███          ███         ██████              ███
+    ███ ███                ███    ███  ███    ███               ███          ███            ███              ███
+  ███     ███               ███  ███    ███  ███                ███          ███            ███              ███
+███         ███              ██████      ██████         ██████████████████   ███            ███      █████████
+	""")
+			elif check_win(board) == "O":
+				print("""
+   █████████           ███                        ███   ██████████████████   ███            ███      █████████
+ ███       ███         ███                        ███           ███          ██████         ███    ███
+███         ███         ███                      ███            ███          ███   ███      ███    ███
+███         ███          ███                    ███             ███          ███      ███   ███      █████████
+███         ███           ███      ██████      ███              ███          ███         ██████              ███
+███         ███            ███    ███  ███    ███               ███          ███            ███              ███
+ ███       ███              ███  ███    ███  ███                ███          ███            ███              ███
+   █████████                 ██████      ██████         ██████████████████   ███            ███      █████████
+			""")
+			break
+		while True:
+			print_board(board)
+			if check_win(board) != None:
+				if check_win(board) == "X":
+					print("""
+███         ███        ███                        ███   ██████████████████   ███            ███      █████████
+  ███     ███          ███                        ███           ███          ██████         ███    ███
+    ███ ███             ███                      ███            ███          ███   ███      ███    ███
+     █████               ███                    ███             ███          ███      ███   ███      █████████
+     █████                ███      ██████      ███              ███          ███         ██████              ███
+    ███ ███                ███    ███  ███    ███               ███          ███            ███              ███
+  ███     ███               ███  ███    ███  ███                ███          ███            ███              ███
+███         ███              ██████      ██████         ██████████████████   ███            ███      █████████
+	""")
+				elif check_win(board) == "O":
+					print("""
+   █████████           ███                        ███   ██████████████████   ███            ███      █████████
+ ███       ███         ███                        ███           ███          ██████         ███    ███
+███         ███         ███                      ███            ███          ███   ███      ███    ███
+███         ███          ███                    ███             ███          ███      ███   ███      █████████
+███         ███           ███      ██████      ███              ███          ███         ██████              ███
+███         ███            ███    ███  ███    ███               ███          ███            ███              ███
+ ███       ███              ███  ███    ███  ███                ███          ███            ███              ███
+   █████████                 ██████      ██████         ██████████████████   ███            ███      █████████
+				""")
+				break
+			print("1 for top left")
+			print("2 for top middle")
+			print("3 for top right")
+			print("4 for middle left")
+			print("5 for middle middle")
+			print("6 for middle right")
+			print("7 for bottom left")
+			print("8 for bottom middle")
+			print("9 for bottom right")
 			while True:
-				go = check_int(input(f"1 for {p1} to go first 2 for {p2} to go first: "))
-				if go != "":
-					if go == "1":
-						turn = "p1"
-						break
-					elif go == "2":
-						turn = "p2"
-						break
-					else:
-						type_text("not a valid input")
-			while True:
-				win = check_win(board)
-				if win == "tie":
-					type_text("tie")
+				try:
+					play_go = int(input("where do you want to go: "))
 					break
-				elif win == "X":
-					type_text(f"{p1} wins")
-					break
-				elif win == "O":
-					type_text(f"{p2} wins")
-					break
+				except:
+					print("nope")
+			if play_go < 10 and play_go > 0:
+				if play_go == 1 and board[0] != None:
+					print("that is alredy taken")
+				elif play_go == 2 and board[1] != None:
+					print("that is alredy taken")
+				elif play_go == 3 and board[2] != None:
+					print("that is alredy taken")
+				elif play_go == 4 and board[3] != None:
+					print("that is alredy taken")
+				elif play_go == 5 and board[4] != None:
+					print("that is alredy taken")
+				elif play_go == 6 and board[5] != None:
+					print("that is alredy taken")
+				elif play_go == 7 and board[6] != None:
+					print("that is alredy taken")
+				elif play_go == 8 and board[7] != None:
+					print("that is alredy taken")
+				elif play_go == 9 and board[8] != None:
+					print("that is alredy taken")
 				else:
-					print_ui(board)
-				if turn == "p1":
-					while True:
-						while True:
-							peace = check_int(input(f"{p1} where do you want to go(use the number of place like top left is 1):"))
-							if peace != "":
-								break
-						if board[peace-1] != None:
-							type_text("already taken")
-						else:
-							board[peace-1] = "X"
-							turn = "p2"
-							break
-				elif turn == "p2":
-					while True:
-						while True:
-							peace = check_int(input(f"{p2} where do you want to go(use the number of place like top left is 1):"))
-							if peace != "":
-								peace = int(peace)
-								break						
-						if board[peace-1] != None:
-							type_text("already taken")
-						else:
-							board[peace-1] = "O"
-							turn = "p1"
-							break
-				print_ui(board)
-		elif play == "1":
-			while True:
-				board = choose_move(board, "X")
-				if check_win(board) != None:
-					print_ui(board)
-					type_text(check_win(board))
+					if play_go == 1:
+						board[0] = "O"
+					if play_go == 2:
+						board[1] = "O"
+					if play_go == 3:
+						board[2] = "O"
+					if play_go == 4:
+						board[3] = "O"
+					if play_go == 5:
+						board[4] = "O"
+					if play_go == 6:
+						board[5] = "O"
+					if play_go == 7:
+						board[6] = "O"
+					if play_go == 8:
+						board[7] = "O"
+					if play_go == 9:
+						board[8] = "O"
+					print_board(board)
+					possible_boards(board, "X")
 					break
-				while True:
-					print_ui(board)
-					if check_win(board) != None:
-						break
-					type_text("1 for top left")
-					type_text("2 for top middle")
-					type_text("3 for top right")
-					type_text("4 for middle left")
-					type_text("5 for middle middle")
-					type_text("6 for middle right")
-					type_text("7 for bottom left")
-					type_text("8 for bottom middle")
-					type_text("9 for bottom right")
-					while True:
-						play_go = check_int(input("where do you want to go: "))
-						if play_go != "":
-							break
-					if play_go < 10 and play_go > 0:
-						if play_go == 1 and board[0] != None:
-							type_text("that is alredy taken")
-						elif play_go == 2 and board[1] != None:
-							type_text("that is alredy taken")
-						elif play_go == 3 and board[2] != None:
-							type_text("that is alredy taken")
-						elif play_go == 4 and board[3] != None:
-							type_text("that is alredy taken")
-						elif play_go == 5 and board[4] != None:
-							type_text("that is alredy taken")
-						elif play_go == 6 and board[5] != None:
-							type_text("that is alredy taken")
-						elif play_go == 7 and board[6] != None:
-							type_text("that is alredy taken")
-						elif play_go == 8 and board[7] != None:
-							type_text("that is alredy taken")
-						elif play_go == 9 and board[8] != None:
-							type_text("that is alredy taken")
-						else:
-							if play_go == 1:
-								board[0] = "O"
-							if play_go == 2:
-								board[1] = "O"
-							if play_go == 3:
-								board[2] = "O"
-							if play_go == 4:
-								board[3] = "O"
-							if play_go == 5:
-								board[4] = "O"
-							if play_go == 6:
-								board[5] = "O"
-							if play_go == 7:
-								board[6] = "O"
-							if play_go == 8:
-								board[7] = "O"
-							if play_go == 9:
-								board[8] = "O"
-							print_ui(board)
-							possible_boards(board, "X")
-							choose_move(board,"X")
-							break
-					else:
-						type_text("nope")
-				if check_win(board) != None:
-					type_text(check_win(board))
-					print_ui(board)
-					break
+			else:
+				print("nope")
+		if check_win(board) == None:
+			print_board(board)
 		else:
-			type_text("ok sending you back to the hub.")
-			return
+			if check_win(board) == "X":
+				print("""
+███         ███        ███                        ███   ██████████████████   ███            ███      █████████
+  ███     ███          ███                        ███           ███          ██████         ███    ███
+    ███ ███             ███                      ███            ███          ███   ███      ███    ███
+     █████               ███                    ███             ███          ███      ███   ███      █████████
+     █████                ███      ██████      ███              ███          ███         ██████              ███
+    ███ ███                ███    ███  ███    ███               ███          ███            ███              ███
+  ███     ███               ███  ███    ███  ███                ███          ███            ███              ███
+███         ███              ██████      ██████         ██████████████████   ███            ███      █████████
+	""")
+			elif check_win(board) == "O":
+				print("""
+   █████████           ███                        ███   ██████████████████   ███            ███      █████████
+ ███       ███         ███                        ███           ███          ██████         ███    ███
+███         ███         ███                      ███            ███          ███   ███      ███    ███
+███         ███          ███                    ███             ███          ███      ███   ███      █████████
+███         ███           ███      ██████      ███              ███          ███         ██████              ███
+███         ███            ███    ███  ███    ███               ███          ███            ███              ███
+ ███       ███              ███  ███    ███  ███                ███          ███            ███              ███
+   █████████                 ██████      ██████         ██████████████████   ███            ███      █████████
+	""")
+			break
 def madlib():
 	type_text("hi i am libby")
 	runlib = True
@@ -1184,11 +1457,32 @@ def madlib():
 			runlib = False
 			return
 def lists():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	type_text("hi i am listy (but evoryone calls me lil'lister)")
 	clist = input("what is the name of your list: ")
 	thelist = []
 	while True:
 		action = input("""what do you want to do
+0 to stop
 1 add item
 2 remove item
 3 to print and leave the list (note this also deletes it): """)
@@ -1227,7 +1521,29 @@ def lists():
 				print("___________________________",flush=True)
 				clist = input("what is the new name for the new list: ")
 				thelist = []	
+			elif action == "0":
+				return
 def hub():
+	global turn
+	global runhub
+	global debuging
+	global invertedP
+	global iterationP
+	global runnerP
+	global var
+	global hubo
+	global operation
+	global easterEggCount
+	global maxGuessCount
+	global minGuess
+	global maxGuess
+	global playCount
+	global playAgain
+	global debuging
+	global typing
+	global type_speed
+	global player_score
+	global com_score
 	while True:
 		type_text("Welcome to the hub. I am hubby I will direct you to wherever you want.")
 		hubo = 0
@@ -1251,7 +1567,78 @@ def hub():
 		else:
 			hubo = int(hubo)
 			if hubo == 0:
-				type_text("Goodby please come back soon! ##connection terminated by:Hubby##")
+				type_text("Goodby please come back soon! ##connection terminated by:Hubby##, end sequance initiated:")
+				time.sleep(4)
+				print("""
+		  		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		  		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*-.......     ......:=#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-......:::--==++++===--:::....  .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@#...-=-::-+++*++++++++++++++++++++-.. :@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@..-+=...=-...=++++++++++++++++++++++++-. @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@%.-++.+@@@@@@+.=++++++++++++++=+++++++++=. @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@-.+*+.@@@@@@@@=-+++++++++++++++++=++=+====..@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@-.*++.@@@@@@@@--++++++++++++++++++++++++++:.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@-.+++:.@@@@@@..=++++++++=++++++=++++++====:.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@-.**++:... ..:=+++++++++++++++++++++=+++++:.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@-:*+++++++++++++++++++++++++++++=+===+====:.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@      .              ..==++++++++++++++==+:.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-*=+=========+==++=:.@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@%*#########%###################@=:=++++++++++=++++==:.@@@%%@@@@@@%@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@+.....:..............................-=+=++=+=+==========:.@@@*##########*#@@@@@@@@@@@@
+				@@@@@@@@@...-+***++++++++++++++++++++=+++++++++++++++++++++++++++===:.@@@#@@@@@@@%%@%%##%@@@@@@@@@
+				@@@@@@@..-+*+++++++++++++++++++++++++++++++++++=++==+==+====+=======:.@@@#%@@@%@@@@@@@@%##@@@@@@@@
+				@@@@@@..=+++*++++++*++++++++++++++++++++++++++++++++++=+=++++=======:.@@@#%@@@%@@@@@@@@@@#%@@@@@@@
+				@@@@@.:+**+++++++++++++++++++++++++++++++++=+++++====+==+===========:.@@@#%%%@%@@@@%%%%%%%#@@@@@@@
+				@@@@@.+*+++++++++++++++++++++++++++++++++++++++=+++++++++=+=======++..@@@#%@@@%@@%%@@%%%@%##@@@@@@
+				@@@@.:++++++++++++++++++++++++++++++++++++=========================- *@@%%@@@@%%%%%%%%%%%%%#@@@@@@
+				@@@@.+++++++++++++++++++++++++++++++++++++++++++++=++++===========: .@@@%%%@@@@@%%%%@%%%@%%##@@@@@
+				@@@*.*++++++++++++++++++++=++++++++++++++======+=++=+=========+=:. -@@@##%%%%%%%%%%%%%%%%%%%#@@@@@
+				@@@.-++++*+*+*+*+++++++++++++++++-=-:........................    :@@@@#%%@%%@%%%%%%%@%%%%%%%#%@@@@
+				@@@.=+++++++++++++++++++=++++-:.    ........................-*#@@@@@###%%%%%%%%@@%%%%%@@@%%%#%@@@@
+				@@@+++++++++++++++++++++++:. .*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@###%%%@@@%%%%%%%%%%%%%%%%%%##@@@@@
+				@@@.=+*++++++++++++++++++-. +@@@@@@%#%%%%%%%%%%##############*####%%%%%%%%%%%%%%%%%@@%%%%%%%##@@@@
+				@@@.:+++++++++++++=+++++:.-@@@@####%%%%%%%%%%%%%%%%%%%%%%%%%%%@%@%%%%%%%%%%%%%%%%%%%%%%%%%%%#%@@@@
+				@@@#.*++++++++++++++++=:.@@@@##%%@@@@@@@@@@@@@@@%%@@@@@@@%%%%%%%%%%%%@%%%%%%%%%%%%%%%%%%%%%##@@@@@
+				@@@@ =*+++++++++++++++=.%@@@%%@@@@@@@@@@@@@@%%%@@@@@@@@%%@@%%@%%@@%%%%%%%%%%%@%%%%%%%%%%%%%#*@@@@@
+				@@@@.:++++++++++++++++::@@@%%%@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%@@@%%@@%%%%%%%%%%%%%%%%%*@@@@@@
+				@@@@@.=+++++++++++++++.:@@##@@@@@@@@@@@@%%%@%@@@@@@@@@@%%%@%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##*@@@@@@
+				@@@@@..=++++++++++=+++.:@@%%@@@@@@@@@%%%%%@@%%%%%%%%%@%%%%%%%%%%%%%%%@%%%%%%%%%%%%%%%%%%%#*@@@@@@@
+				@@@@@@ .=++=++++++++++.:@@%%%@@@%%%%@@@@@@@%%@@%%%@%%%%%%%@%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*@@@@@@@@
+				@@@@@@@..-++++++=+++++.:@@%%@@@@@@@@@@@@@%%%%%%%%%%%%@@%%%%%@@%%%%%%%%%%%%%%%%%%%%%%%%%#*%@@@@@@@@
+				@@@@@@@@-..:-*++++++++.:@@%%@%%%@@@@%@@@%%@@%@@@%%@%%%%%%%@%%%%%%%%%%%%%%%%%%%%%%%%###**@@@@@@@@@@
+				@@@@@@@@@@*   ........ .@@%%@%@@@%%%%%%%%%%%%%%%###########***######****#****####*****%@@@@@@@@@@@
+				@@@@@@@@@@@@@@@%*@####=*@@%#%@@@@@@@@%@@%%%%%%%#@@%@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@%%@@@%%%%%%%%%%%%@%%%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%@%%%%@%%%%%%%%%%%##*******++++++++++++++@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%%%%%%%%%@@%@@@%%@%%%@%%%%%%%%%%%%%%%%%#*@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%##***+**#%%%#*@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@##@%%%%%%%%%%%%%%@%%%%%%%%%%%%*@@@@@@%*#%%#*@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%%%%%%%%%%%%%%%%%%%%%%%%%%*@@@@@@@@@#%%#*@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@#%%%%%%@@%%%%%%%%%%%%%%%%%%%#@@@@@@@@@#%%*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@#*%%%%%%%%%%%%%%%%%%%%%%%%%%##@@@@@@@*##**@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*#%%%%%%%%%%%%%%%%%%%%%%%%###*###*###*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%**#%%%%%%%%%%%%%%%%%%%%%%%%###****#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#****####%%%%%%%%%%%%%###*+***@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#**++++**++*++***#%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				""")
+				type_text("made in python")
+				time.sleep(3)
+				type_text("mostly by Liam")
+				time.sleep(3)
+				type_text("tested by Jonas")
+				time.sleep(3)
+				type_text("text based adveture game by Miss Larose")
+				time.sleep(3)
+				type_text("help from my dad")
+				time.sleep(3)
+				type_text("great ideas made by my bothers and teacher thanks ;)")
+				time.sleep(3)
+				type_text("goodby comeback soon")
 				time.sleep(1)
 				quit()
 			elif hubo ==1:
@@ -1290,7 +1677,7 @@ def hub():
 				lists()
 			elif hubo ==11:
 				type_text("Ok sending you to The Gamer")
-				meet_o_code(1)
+				meet_o_code()
 			elif hubo == 12:
 				type_text("ok sending you to The Rock")
 				dwane_the_rock()
