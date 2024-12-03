@@ -1,19 +1,20 @@
-def area_equation(x, y):
-    area = x * y
-    return area
+import win32api
+import time
 
-def volume_equation(a, b, c):
-    temp = area_equation(a, b)
-    result = temp * c
-    return result
+width = win32api.GetSystemMetrics(0)
+height = win32api.GetSystemMetrics(1)
+midWidth = int((width + 1) / 2)
+midHeight = int((height + 1) / 2)
 
-length_area = 5
-hight_area = 3
-area = area_equation(length_area, hight_area)
-print(f"The shape's area is: {area}")
-
-hight = 4
-width = 6
-base = 2
-volume = volume_equation(hight, width, base)
-print(f"The shape's volume is: {volume}")
+state_left = win32api.GetKeyState(0x01)  # Left button up = 0 or 1. Button down = -127 or -128
+while True:
+    a = win32api.GetKeyState(0x01)
+    if a != state_left:  # Button state changed
+        state_left = a
+        print(a)
+        if a < 0:
+            print('Left Button Pressed')
+        else:
+            print('Left Button Released')
+            win32api.SetCursorPos((midWidth, midHeight))
+    time.sleep(0.001)

@@ -12,7 +12,6 @@ from pig import call
 from temp_calculate_hub import farinhight451
 from settings import changeSettings
 hubo = 0
-
 def hub():
 	while True:
 		type_text("Welcome to the hub. I am hubby I will direct you to wherever you want.")

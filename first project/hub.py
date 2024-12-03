@@ -1,5 +1,6 @@
 import random
 import time
+import os
 turn = ""
 runhub = True
 debuging = 1
@@ -9,14 +10,14 @@ runnerP = ""
 var = 0
 hubo = 0
 operation = 0
-easterEggCount = 2
-maxGuessCount = 20
+easterEggCount = 5
+maxGuessCount = 10
 minGuess = 1
 maxGuess = 100
 playCount = 0
 playAgain = True
-debuging = True
-typing = False
+debuging = False
+typing = True
 type_speed = .01
 player_score = 0
 com_score = 0
